@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+   <body style="background-color: #118ab2;">
+
+      <h1 style="text-align: center; color: white">
+         The processed image
+     </h1>
+     <div style="text-align: center;">
+      <img style="width: 500px; height: auto; position: relative; top: 100px" src="{{ url_for('static', filename=file) }}" /> 
+     </div>
+     <form style="text-align: center;">
+      <input 
+      style="width: 100px;
+            height: 50px;
+            font-size: larger;
+            border-radius: 10px;
+            border: 2px solid #06d6a0;
+            background-color: white;
+            color: #ef476f;
+            position: relative;
+            top: 150px" 
+      type="button" value="Go back!" onclick="history.back()">
+     </form>
+   </body>
+</html>

@@ -48,3 +48,10 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# Finder automated file, Desktop Service Store
+.DS_Store
+
+# Images created by the application, and other images for testing
+Static/*
+*.png

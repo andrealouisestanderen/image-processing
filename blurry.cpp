@@ -2,7 +2,7 @@
 #include <vector>
 #include <assert.h>
 #include <cmath>
-#include "png++-0.2.7/png.hpp"
+#include <png++/png.hpp>
 #include "stdio.h"
 #include "string.h"
 #include <string>
