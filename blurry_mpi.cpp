@@ -241,13 +241,6 @@ int main(int argc, char *argv[])
 
         Image newSubImage = applyFilter(subImage, filter);
 
-        stringstream ss;
-        ss << argv[2];
-        string str = ss.str();
-        string ficheroGuardar = str;
-
-        saveImage(newSubImage, ficheroGuardar);
-
         int newSubHeight = newSubImage[0].size();
         int newSubWidth = newSubImage[0][0].size();
         for (int row_id = 0; row_id < newSubHeight; row_id++)
@@ -259,7 +252,8 @@ int main(int argc, char *argv[])
                 for (int dim_id = 0; dim_id < 3; dim_id++)
                 {
                     double data = newSubImage[dim_id][row_id][col_id];
-                    send_back[col_id + (newSubWidth * dim_id)] = data;
+                    // send_back[col_id + (newSubWidth * dim_id)] = data;
+                    send_back[(col_id * 3) + dim_id] = data;
                 }
             }
             rc = MPI_Send(send_back, newSubWidth * 3, MPI_DOUBLE, 0, tag, MPI_COMM_WORLD);
